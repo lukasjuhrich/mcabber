@@ -24,7 +24,7 @@
 #include <time.h>
 #include <ctype.h>
 
-#include <config.h>
+#include <mcabber/config.h>
 #include <locale.h>
 #include <assert.h>
 #ifdef USE_SIGWINCH

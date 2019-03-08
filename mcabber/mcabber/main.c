@@ -26,7 +26,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <glib.h>
-#include <config.h>
+#include <mcabber/config.h>
 #include <poll.h>
 #include <errno.h>
 

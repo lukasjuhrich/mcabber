@@ -19,7 +19,7 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <config.h>
+#include <mcabber/config.h>
 
 #include <stdio.h>
 #include <stdlib.h>

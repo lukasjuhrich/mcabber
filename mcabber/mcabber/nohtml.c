@@ -26,7 +26,7 @@
 
 #include <string.h>
 #include <glib.h>
-#include <config.h>
+#include <mcabber/config.h>
 
 
 /*  html_strip(htmlbuf)
