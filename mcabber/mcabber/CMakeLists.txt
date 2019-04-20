@@ -76,21 +76,6 @@ target_include_directories(mcabber PUBLIC ../include)
 
 ######## DEPENDENCIES ########
 
-# TODO insert that into a separate cmake module
-# https://cmake.org/pipermail/cmake/2010-November/041052.html
-find_package(PkgConfig REQUIRED)
-
-# GLIB
-# Sets $GLIB_* variables. see cmake --help-module FindPkgConfig
-pkg_search_module(GLIB REQUIRED glib-2.0)
-if(${GLIB_FOUND})
-    set(HAVE_GLIB)
-endif()
-
-target_include_directories(mcabber PRIVATE ${GLIB_INCLUDE_DIRS})
-target_link_libraries(mcabber ${GLIB_LDFLAGS})
-
-
 # NCURSES
 
 pkg_search_module(NCURSES REQUIRED ncursesw ncurses)
@@ -123,12 +108,6 @@ check_include_file(ncurses/panel.h HAVE_NCURSES_PANEL_H)
 check_include_file(ncurses.h HAVE_NCURSES_H)
 check_include_file(panel.h HAVE_PANEL_H)
 
-
-# LOUDMOUTH
-pkg_search_module(LOUDMOUTH REQUIRED loudmouth-1.0>=1.4.2)
-
-target_include_directories(mcabber PRIVATE ${LOUDMOUTH_INCLUDE_DIRS})
-target_link_libraries(mcabber ${LOUDMOUTH_LDFLAGS})
 
 # ASPELL
 

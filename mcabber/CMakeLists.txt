@@ -6,6 +6,7 @@ cmake_policy(SET CMP0054 NEW)
 
 add_compile_options(-W -Wall)
 
+include(dependencies.cmake)  # project-wide dependencies
 add_subdirectory(mcabber)
 add_subdirectory(doc)
 add_subdirectory(modules)

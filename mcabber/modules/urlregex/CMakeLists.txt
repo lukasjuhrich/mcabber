@@ -1,22 +1,7 @@
-########### install files ###############
+add_library(urlregex SHARED urlregex.c)
+target_include_directories(urlregex PRIVATE ${PROJECT_BINARY_DIR})  # allows for <mcabber/*.h> includes
 
-
-
-
-#original Makefile.am contents follow:
-
-#
-#if INSTALL_HEADERS
-#
-#pkglib_LTLIBRARIES = liburlregex.la
-#liburlregex_la_SOURCES = urlregex.c
-#liburlregex_la_LDFLAGS = -module -avoid-version -shared
-#
-#LDADD = $(GLIB_LIBS)
-#AM_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir) \
-#			      $(GLIB_CFLAGS) $(LOUDMOUTH_CFLAGS) \
-#                              $(GPGME_CFLAGS) $(LIBOTR_CFLAGS) \
-#                              $(ENCHANT_CFLAGS)
-#
-#endif
-#
+option(HAVE_GLIB_REGEX "Define whether glib has regex support" ON)
+if(HAVE_GLIB_REGEX)
+    target_compile_options(urlregex PRIVATE "-DHAVE_GLIB_REGEX")
+endif()
