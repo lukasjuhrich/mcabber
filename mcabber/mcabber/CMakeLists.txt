@@ -14,7 +14,7 @@ set(MCABBER_BRANCH "cmake")
 # for a list of available options, use `cmake -LH .`
 option(WITH_ENCHANT "Compile with ENCHANT support")
 option(HAVE_GPGME "Compile with GPGME support")
-option(PKGLIB_DIR "TODO")  # TODO
+set(PKGLIB_DIR "/usr/lib/mcabber" CACHE PATH "Path under which modules should be installed")
 option(ENABLE_DEBUG "Build in DEBUG configuration")
 
 # defines target mcabber
