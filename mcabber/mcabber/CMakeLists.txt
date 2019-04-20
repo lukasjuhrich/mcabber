@@ -98,6 +98,7 @@ target_include_directories(mcabber PRIVATE ${NCURSES_INCLUDE_DIRS})
 target_link_libraries(mcabber ${NCURSES_LDFLAGS})
 
 option(HAVE_UNICODE "whether to compile with unicode support." ON)  # TODO use a check script instead
+option(HAVE_ESCDELAY "whether ncurses supports ESCDELAY" ON)  # TODO use a check script instead
 
 # panelw is optional
 pkg_search_module(PANEL panelw panel)
