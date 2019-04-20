@@ -1,0 +1,61 @@
+/* # https://cmake.org/pipermail/cmake/2010-November/041052.html */
+
+/* Name of package */
+#define PACKAGE "mcabber"
+
+/* Define to the address where bug reports for this package should be sent. */
+#define PACKAGE_BUGREPORT "@PACKAGE_BUGREPORT@"
+
+/* Define to the full name of this package. */
+#define PACKAGE_NAME "@PACKAGE_NAME@"
+
+/* Define to the full name and version of this package. */
+#define PACKAGE_STRING "@PACKAGE_NAME@ @PACKAGE_VERSION@"
+
+/* Define to the one symbol short name of this package. */
+#define PACKAGE_TARNAME "@PACKAGE_NAME@"
+
+/* Define to the home page for this package. */
+#define PACKAGE_URL ""
+
+/* Define to the version of this package. */
+#define PACKAGE_VERSION "@PACKAGE_VERSION@"
+
+/* Modules directory */
+#define PKGLIB_DIR "@PKGLIB_DIR@"
+
+
+#cmakedefine MODULES_ENABLE
+
+#define DATA_DIR "/usr/local/share"
+
+#define MCABBER_BRANCH "@MCABBER_BRANCH@"
+#define MCABBER_VERSION "@PACKAGE_VERSION@"
+
+
+#cmakedefine WITH_ASPELL
+#cmakedefine HAVE_LIBOTR
+#cmakedefine HAVE_GPGME
+#cmakedefine HAVE_UNICODE
+#cmakedefine HAVE_WCHAR_H
+#cmakedefine HAVE_WCTYPE_H
+#cmakedefine ENABLE_DEBUG
+
+#cmakedefine HAVE_LIBPANEL 1
+#cmakedefine HAVE_LIBPANEL_W 1
+
+#cmakedefine HAVE_NCURSESW_NCURSES_H 1
+#cmakedefine HAVE_NCURSESW_PANEL_H 1
+
+#cmakedefine HAVE_NCURSES_NCURSES_H 1
+#cmakedefine HAVE_NCURSES_PANEL_H 1
+
+#cmakedefine HAVE_NCURSES_H 1
+#cmakedefine HAVE_PANEL_H 1
+
+#cmakedefine HAVE_LIBIDN
+
+#undef HAVE_WCHAR_H
+#undef HAVE_ISWBLANK
+#undef HAVE_STRCASESTR
+

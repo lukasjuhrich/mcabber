@@ -1,0 +1,13 @@
+macro(libdebug modname)
+    # print out variables set by `pkg_search_module` or similar.
+    message("######## ${modname} variables ########")
+    message("${modname}_FOUND: ${${modname}_FOUND}")
+    message("${modname}_LIBRARIES: ${${modname}_LIBRARIES}")
+    message("${modname}_LIBRARY_DIRS: ${${modname}_LIBRARY_DIRS}")
+    message("${modname}_LDFLAGS: ${${modname}_LDFLAGS}")
+    message("${modname}_LDFLAGS_OTHER: ${${modname}_LDFLAGS_OTHER}")
+    message("${modname}_INCLUDE_DIRS: ${${modname}_INCLUDE_DIRS}")
+    message("${modname}_CFLAGS: ${${modname}_CFLAGS}")
+    message("${modname}_CFLAGS_OTHER: ${${modname}_CFLAGS_OTHER}")
+    message("\n")
+endmacro(libdebug)
