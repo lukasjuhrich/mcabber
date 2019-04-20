@@ -87,10 +87,7 @@ if(${GLIB_FOUND})
     set(HAVE_GLIB)
 endif()
 
-# option(HAVE_GLIB "Enable or disable glib support")  # TODO think whether that makes sense.
-
 target_include_directories(mcabber PRIVATE ${GLIB_INCLUDE_DIRS})
-add_definitions(${GLIB_CFLAGS_OTHER})  # TODO check whether that's necessary
 target_link_libraries(mcabber ${GLIB_LDFLAGS})
 
 
