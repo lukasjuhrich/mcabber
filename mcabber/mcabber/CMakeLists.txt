@@ -14,7 +14,6 @@ set(PACKAGE_BUGREPORT "mcabber@lilotux.net")
 option(WITH_ENCHANT "Compile with ENCHANT support")
 option(HAVE_GPGME "Compile with GPGME support")
 option(PKGLIB_DIR "TODO")  # TODO
-option(HAVE_UNICODE "Compile with UNICODE support")
 option(ENABLE_DEBUG "Build in DEBUG configuration")
 
 # defines target mcabber
@@ -95,12 +94,12 @@ target_link_libraries(mcabber ${GLIB_LDFLAGS})
 
 
 # NCURSES
-pkg_search_module(NCURSES REQUIRED ncursesw ncurses)  # TODO check for `waddnwstr` as in configure.ac
+
+pkg_search_module(NCURSES REQUIRED ncursesw ncurses)
 target_include_directories(mcabber PRIVATE ${NCURSES_INCLUDE_DIRS})
 target_link_libraries(mcabber ${NCURSES_LDFLAGS})
 
-# TODO if waddnwstr is present, do what configure.ac does
-# (like setting cf_ncurses_unicode="yes")
+option(HAVE_UNICODE "whether to compile with unicode support." ON)  # TODO use a check script instead
 
 # panelw is optional
 pkg_search_module(PANEL panelw panel)
