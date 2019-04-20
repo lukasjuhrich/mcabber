@@ -144,7 +144,19 @@ if(${WITH_ASPELL})
 endif()
 
 
+# LIBIDN
+pkg_search_module(LIBIDN libidn)
+if(LIBIDN_FOUND)
+    set(HAVE_LIBIDN ON)
+    target_include_directories(mcabber PRIVATE ${LIBIDN_INCLUDE_DIRS})
+    target_link_libraries(mcabber ${LIBIDN_LDFLAGS})
+else()
+    message(WARNING "libidn not found")
+endif()
+
+
 # OTR
+
 option(EnableOtr "Enable OTR support" ON)
 if(EnableOtr)
     # TODO make function so we can utilize `return()` for nicer control flow.
