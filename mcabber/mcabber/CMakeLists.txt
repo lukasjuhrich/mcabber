@@ -8,6 +8,7 @@ set(PACKAGE_VERSION "1.1.1-dev")
 # set(PACKAGE_STRING, "TODO")
 set(PACKAGE_BUGREPORT "mcabber@lilotux.net")
 # set(PACKAGE_URL, "TODO")
+set(MCABBER_BRANCH "cmake")
 
 # options can be set by adding e.g. `-DWITH_ASPELL=ON`
 # for a list of available options, use `cmake -LH .`
@@ -173,6 +174,13 @@ endif()
 
 # MODULES
 option(MODULES_ENABLE "Define if you want dynamic modules loading" ON)
+if(MODULES_ENABLE)
+    target_sources(mcabber PRIVATE modules.h modules.c)
+
+    pkg_search_module(GMODULE REQUIRED gmodule-2.0)
+    target_include_directories(mcabber PRIVATE ${GMODULE_INCLUDE_DIRS})
+    target_link_libraries(mcabber ${GMODULE_LDFLAGS})
+endif()
 
 ######## CONFIG.H ########
 configure_file("config-cmake.h.in" "${PROJECT_BINARY_DIR}/mcabber/config.h")
